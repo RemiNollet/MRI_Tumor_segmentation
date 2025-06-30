@@ -1,0 +1,9 @@
+tensorflow==2.19.0
+tensorflow-io-gcs-filesystem==0.37.1
+tensorboard==2.19.0
+tensorboard-data-server==0.7.2
+seaborn==0.13.2
+pandas==2.3.0
+matplotlib==3.10.3
+matplotlib-inline==0.1.7
+keras==3.10.0
