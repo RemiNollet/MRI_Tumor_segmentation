@@ -1,14 +1,29 @@
 # U-NET Brain MRI Tumor Segmentation (BraTS 2019)
 
-End-to-end segmentation of brain tumors on FLAIR MRI slices using a 2-D U-NET trained on the BraTS 2019 dataset.  
-The project is designed for quick deployment on AWS SageMaker and includes a demonstration notebook.
+## Project overview
 
+A medical-imaging manufacturer would like to ship software that **automatically detects and segments brain tumors** on MRI scans, providing radiologists with an additional decision-support tool.  
+The BraTS 2019 collection offers multi-contrast MRI volumes along with expert, voxel-level tumor annotations.  
+The goal is to train an algorithm that, given the axial slices (Z-axis) of a patient scan, returns an accurate binary mask indicating tumor pixels.
+
+### Performance constraints
+
+Because missing a tumor is clinically critical, **false negatives must be minimised**. The project therefore sets two global targets, computed over the full validation set (pixel-wise):
+
+| Metric | Definition | Required minimum |
+|--------|------------|------------------|
+| **Sensitivity / Recall** | `TP / (TP + FN)` | **95 %** |
+| **Precision** | `TP / (TP + FP)` | **70 %** |
+
+A precision below 70 % would not provide sufficient confidence, while recall below 95 % would risk overlooking true lesions.
+
+---
 ---
 
 ## Repository structure
 ├── UNET_IRM_for_SageMaker.ipynb   ← main notebook \
 ├── checkpoints/                   ← place the pretrained model here \
-├── requirements.txt               ← dependancies to install   \
+├── requirements.txt               ← dependencies to install   \
 └── README.md \
 
 ---
