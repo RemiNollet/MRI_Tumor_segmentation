@@ -1,6 +1,6 @@
 # Key modules
 
-# io_utils.py: load_nifti(path) -> np.ndarray, save_png(img, path)
+# io_utils.py: load_nifti(path) -> np.ndarray
 
 # preprocessing.py : resize_volume(vol), crop_z(vol, start=3, end=147), volume_to_slices(vol) -> List[np.ndarray]
 
