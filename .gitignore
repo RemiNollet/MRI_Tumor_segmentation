@@ -210,3 +210,5 @@ data/
 models/
 checkpoints/
 logs/
+
+.DS_store
