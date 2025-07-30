@@ -1,4 +1,5 @@
-"""Streamlit front‑end (thin) – uses helper modules in src/
+"""
+Streamlit front-end for the Brain-MRI U-NET demo.
 Run:  streamlit run streamlit_app.py
 """
 from pathlib import Path
